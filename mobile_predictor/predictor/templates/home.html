@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Predictor</title>
+</head>
+<body>
+
+<h2>Mobile Recommendation System</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Price:</label>
+    <input type="number" name="price"><br><br>
+
+    <label>RAM:</label>
+    <input type="number" name="ram"><br><br>
+
+    <label>Storage:</label>
+    <input type="number" name="storage"><br><br>
+
+    <label>Battery:</label>
+    <input type="number" name="battery"><br><br>
+
+    <button type="submit">Predict</button>
+</form>
+{% if result %}
+    <h3>Recommended Category: {{ result }}</h3>
+{% endif %}
+</body>
+</html>
