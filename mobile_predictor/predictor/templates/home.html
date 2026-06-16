@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mobile Predictor</title>
+    <title>Mobile Category Predictor</title>
 </head>
 <body>
 
-<h2>Mobile Recommendation System</h2>
+<h2>Mobile Category Predictor</h2>
 
-<form method="POST">
+<form method="post">
     {% csrf_token %}
-
-    <label>Price:</label>
-    <input type="number" name="price"><br><br>
-
-    <label>RAM:</label>
-    <input type="number" name="ram"><br><br>
-
-    <label>Storage:</label>
-    <input type="number" name="storage"><br><br>
-
-    <label>Battery:</label>
-    <input type="number" name="battery"><br><br>
+    Price: <input type="number" name="price"><br><br>
+    RAM: <input type="number" name="ram"><br><br>
+    Storage: <input type="number" name="storage"><br><br>
+    Battery: <input type="number" name="battery"><br><br>
+    Camera: <input type="number" name="camera"><br><br>
 
     <button type="submit">Predict</button>
 </form>
+
 {% if result %}
-    <h3>Recommended Category: {{ result }}</h3>
+    <h3>Category: {{ result }}</h3>
 {% endif %}
+
 </body>
 </html>
